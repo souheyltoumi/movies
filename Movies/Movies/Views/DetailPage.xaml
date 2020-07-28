@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Movies.Views.DetailPage">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <Image Aspect="AspectFill" x:Name="image"></Image>
+            <BoxView HeightRequest="1" BackgroundColor="Black">
+            </BoxView>
+            <StackLayout Padding="15">
+            <Label x:Name="title" FontAttributes="Bold" FontSize="Medium"></Label>
+            <Label x:Name="release_date" FontSize="Medium" ></Label>
+            <Label x:Name="overview" FontSize="Small"></Label>
+            </StackLayout>
+            <BoxView HeightRequest="1" BackgroundColor="Black"></BoxView>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Button Clicked="Button_Clicked"  Text="back" BackgroundColor="BlueViolet" BorderRadius="15" FontSize="Small"></Button>
+                    <Button Clicked="Delete" Text="Add to Favorites" BackgroundColor="BlueViolet" BorderRadius="15" FontSize="Small"></Button>
+                </StackLayout>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

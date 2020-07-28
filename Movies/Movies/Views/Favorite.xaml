@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Movies.Views.Favorite"
+             Title="Favorite Page">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="exampleListView" RowHeight="300" ItemTapped="ExampleListView_ItemTapped" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <Frame BorderColor="White" Margin="10">
+                                <Frame.Triggers>
+                                    <DataTrigger TargetType="{x:Type Frame}" Value="True">
+                                        <Setter Property="BackgroundColor" Value="Green"/>
+                                    </DataTrigger>
+                                </Frame.Triggers>
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding title}" TextColor="BlueViolet" Font="Bold" />
+                                        <Label Text="{Binding release_date}" TextColor="Black" />
+                                        <Button  BackgroundColor="Red"  Text="delete" Clicked="Button_Clicked" ></Button >
+                                    </StackLayout>
+                                    <Image Source="{Binding poster_path}" />
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

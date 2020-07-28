@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Movies.MasterDetailsPage.MasterDetailPageNavigation">
+
+    <MasterDetailPage.Master>
+        <ContentPage BackgroundColor="White" Padding="10" Title="Master" Icon="hamburger.png">
+            <StackLayout >
+                <Label  Text="Menu"></Label>
+                <Button  Text="Favorite" BackgroundColor="Default" Clicked="Favorite"></Button>
+                <Button  Text="Home" BackgroundColor="Default" Clicked="Home"></Button>
+                <Button  Text="Advanced Search"  BackgroundColor="Accent" Clicked="Search"></Button>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage BackgroundColor="Beige" Padding="10" Title="detail">
+            <StackLayout >
+                <Label Text="MasterPage"></Label>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

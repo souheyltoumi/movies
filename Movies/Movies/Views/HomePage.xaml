@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Movies.Views.HomePage"
+             Title="Home Page">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Recomandation" FontSize="Large"></Label>
+            <StackLayout Orientation="Horizontal">
+                <Image x:Name="image" WidthRequest="50" HeightRequest="50" ></Image>
+                <StackLayout Orientation="Vertical">
+                    <Label x:Name="title" FontSize="Medium" TextColor="Blue"></Label>
+                    <Label x:Name="release_date" FontSize="Small" TextColor="Gray"></Label>
+
+                </StackLayout>
+
+
+            </StackLayout>
+            <Label Text="Playing Now"  FontSize="Large"></Label>
+
+            <ListView x:Name="exampleListView" RowHeight="300" ItemTapped="ExampleListView_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <Frame BorderColor="White" Margin="10">
+                                    <Frame.Triggers>
+                                        <DataTrigger TargetType="{x:Type Frame}" Value="True">
+                                            <Setter Property="BackgroundColor" Value="Green"/>
+                                        </DataTrigger>
+                                    </Frame.Triggers>
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding title}" TextColor="BlueViolet" Font="Bold" />
+                                        <Label Text="{Binding release_date}" TextColor="Black" />
+                                        <ImageButton  Clicked="Delete"  Source="fav.png" WidthRequest="20" HeightRequest="20"></ImageButton >
+                                    </StackLayout>
+                                        <Image Source="{Binding poster_path}" />
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
